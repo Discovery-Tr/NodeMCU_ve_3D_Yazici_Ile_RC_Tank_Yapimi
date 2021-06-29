@@ -1,28 +1,42 @@
-EVDE 3D YAZICI İLE TANK YAPMAK ( RC + NODEMCU )
-22/06/2021 / 3d, Arduino, Kendin Yap, Software, Teknoloji / 0 Yorum
+# EVDE 3D YAZICI İLE TANK YAPMAK ( RC + NODEMCU )
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=Ha2aAsPUa1s" target="_blank">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/youtube.jpg"/>
+ </a>
+</p>
+
+      Merhaba, bu yazımızda evde Rc tank yapımı ve programlamasına değineceğiz. Bütün parça devre şeması ve yazılımını sizlerle paylaşacağım.
 
 
-              Merhaba, bu yazımızda evde Rc tank yapımı ve programlamasına değineceğiz. Bütün parça devre şeması ve yazılımını sizlerle paylaşacağım.
+      Rc yi radyo kontrolü olarak Türkçeye çevirebiliriz. RC (Radio Control ), bir cihazı radyo frekansı ile uzaktan kontrol etmek için kullanılır. TV’lerimizde kullandığımız uzaktan kumanda ile de kontrol edebiliriz fakat mesafe hem uzak olmaz. Hem de kumanda ve cihaz sürekli birbirini görmek zorunda kalır.  Özellikle hobi devrelerinde sıkça tercih kullanılırlar. RC tank, RC araç, RC tekne ve RC drone örnek olarak gösterile bilir. 
+  
+  
+      Bu projemizde tankımız yaklaşık 25Km hız ve 2-3 Km (Açık alanda) kapsama alanı içerisinde kontrol edebiliriz.  Kamera bağlantısı yapılarak tankımızı görmesek te görüntü ile yönlendirmemiz mümkündür.
 
- 
 
-              Rc yi radyo kontrolü olarak Türkçeye çevirebiliriz. RC (Radio Control ), bir cihazı radyo frekansı ile uzaktan kontrol etmek için kullanılır. TV’lerimizde kullandığımız uzaktan kumanda ile de kontrol edebiliriz fakat mesafe hem uzak olmaz. Hem de kumanda ve cihaz sürekli birbirini görmek zorunda kalır.  Özellikle hobi devrelerinde sıkça tercih kullanılırlar. RC tank, RC araç, RC tekne ve RC drone örnek olarak gösterile bilir. 
+      Bir oyuncaktan çok bir keşif robotu yada üzerine bağlanacak değişik eklentiler sayesinde istenilen özellikler eklenebilir.
 
- 
 
-              Bu projemizde tankımız yaklaşık 25Km hız ve 2-3 Km (Açık alanda) kapsama alanı içerisinde kontrol edebiliriz.  Kamera bağlantısı yapılarak tankımızı görmesek te görüntü ile yönlendirmemiz mümkündür.
-
- 
-
-              Bir oyuncaktan çok bir keşif robotu yada üzerine bağlanacak değişik eklentiler sayesinde istenilen özellikler eklenebilir.
-
-3D Çizim Aşamaları
+# 3D Çizim Aşamaları
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/Turret-768x417.jpg"/>
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/Turret-Motor-768x417.jpg"/>
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/Govde-768x418.jpg"/>
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/Govde2-768x416.jpg"/>
+</p>
 	
 	
-Devre Şeması
-Projede kullanılan 2 servo motor Turret kontrolü içindir. Biri namlu yukarı aşağı diğeri ise namlunun sağa sola dönüşü içindir.
+	
+# Devre Şeması
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/tank1_bb-1.png"/>
+</p>
 
-Proje Yazılımı
+   Projede kullanılan 2 servo motor Turret kontrolü içindir. Biri namlu yukarı aşağı diğeri ise namlunun sağa sola dönüşü içindir.
+
+# Proje Yazılımı
+```
 /* Receiver 2 ve 4*/
 #define Ch_Sag_Motor 14 //D5
 #define Ch_Sol_Motor 12 //D6
@@ -212,53 +226,47 @@ void Sag_Motor_Geri()
 digitalWrite(Sag_LPWM, LOW);
 digitalWrite(Sag_RPWM, HIGH);
 }
- 
+ ```
 
-MALZEMELER
-Kumanda:
+# MALZEMELER
+# Kumanda:
 Flysky i6 X1
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/flysky.jpg"/>
+</p>
 
+Kumanda Ayarlaması için <a href="https://www.kirmiziyuz.com/arduino/arduino-ile-rc-kumanda-kullanimi.html
+">tıklayınız.</a>
 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Kumanda Ayarlaması için tıklayınız.
-
-Reciever:
+# Reciever:
 FlySky FS-iA6 Receiver 6CH 2.4G
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/flysky-fs-ia6-receiver-lead-e1624217852706.jpg"/>
+</p>
 
-
-
-Motorlar:
+# Motorlar:
 55T Motor x2
-
-
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/55T-Motor-e1624217913320.jpeg"/>
+</p>
 
 Servo Motor x2
 
-Motor Sürücü:
+# Motor Sürücü:
 20 Amper Motor Sürücü Kartı BTS7960B  x2
+<p align="center">
+  <img src="https://kirmiziyuz.com/wp-content/uploads/2021/06/BTS7960B.jpg"/>
+</p>
 
 
 
-Rulman:
+# Rulman:
+
 8x22x7mm 608 12x
 
 4x13x5mm 624 12x
 
-Vidalar:
+# Vidalar:
 M4x15mm 8x
 
 M4x60mm 12x
@@ -269,7 +277,9 @@ M3x10mm 4x
 
 M3x45mm 84x
 
-Somun:
+
+# Somun:
+
 M4 20x
 
 M3 88x
